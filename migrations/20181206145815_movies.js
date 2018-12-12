@@ -1,15 +1,14 @@
 
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('movies', (movie) =>{
-      movie.increment('id')
+  return knex.schema.createTable('movie', (movie) =>{
+      movie.increments('id')
       movie.string('director')
       movie.string('title')
       movie.integer('year')
-      movie.rating('string')
-
+      movie.string('rating')
   })
 }
 
 exports.down = (knex, Promise) => {
-    return knex.schema.dropTableIfExists('movies')
+    return knex.schema.dropTableIfExists('movie')
 }
