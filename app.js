@@ -13,6 +13,9 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 app.use('/movies', moviesRoutes)
 
+app.get('/', (req, res) =>{
+    res.send('chickens')
+})
 
 app.listen(port, () => {
     console.log(`running on port: ${port}`)
